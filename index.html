@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Are You the Cutest?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fdfd96;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+        #no-button {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Are you the cutest in the world?</h1>
+        <div class="button-container">
+            <button onclick="alert('I knew it! 😊')">Yes</button>
+            <button id="no-button" onclick="alert('Are you sure?')">No</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to make the "No" button evade
+        const noButton = document.getElementById('no-button');
+        
+        noButton.addEventListener('mouseenter', () => {
+            const randomX = Math.floor(Math.random() * (window.innerWidth - noButton.clientWidth));
+            const randomY = Math.floor(Math.random() * (window.innerHeight - noButton.clientHeight));
+            
+            noButton.style.position = 'absolute';
+            noButton.style.left = randomX + 'px';
+            noButton.style.top = randomY + 'px';
+        });
+    </script>
+
+</body>
+</html>
